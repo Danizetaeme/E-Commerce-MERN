@@ -3,7 +3,7 @@ import DronModel from "../models/DronModel.js"
 
 // Métodos para el CRUD 
 
-// Mostrar todos los blogs
+// Mostrar todos los drons
 export const getAllDrons = async (req, res) => {
     try {
         const drons = await DronModel.find()
@@ -12,7 +12,7 @@ export const getAllDrons = async (req, res) => {
         res.json({ message: error.message })
     }
 }
-//Mostrar un blog
+//Mostrar un dron
 export const getDron = async (req, res) => {
     try {
         const id = req.params.id
@@ -24,7 +24,7 @@ export const getDron = async (req, res) => {
         res.json({ message: error.message })
     }
 }
-//Crear un blog
+//Crear un dron
 export const createDron = async (req, res) => {
     try {
         await DronModel.create(req.body)
@@ -35,7 +35,7 @@ export const createDron = async (req, res) => {
         res.json({ message: error.message })
     }
 }
-//Actualizar un blog
+//Actualizar un dron
 export const UpdateDron = async (req, res) => {
     try {
         const id = req.params.id
@@ -49,7 +49,7 @@ export const UpdateDron = async (req, res) => {
         res.json({ message: error.message })
     }
 }
-//Eliminar un blog
+//Eliminar un dron
 export const DeleteDron = async (req, res) => {
     try {
         const id = req.params.id

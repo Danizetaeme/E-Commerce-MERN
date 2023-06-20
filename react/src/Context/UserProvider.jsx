@@ -12,6 +12,8 @@ export function UserProvider({ children }) {
   const [heartQuantity, setHeartQuantity] = useState(0);
   const cartLS = JSON.parse(localStorage.getItem('cart'))??[]
   const heartLS = JSON.parse(localStorage.getItem('heart'))??[]
+  const UserAccountLS = JSON.parse(localStorage.getItem('UserAccount'))??[]
+  const [UserAccount, setUserAccount] = useState(UserAccountLS);
   const[ isHeartColored, setIsHeartColored]=useState([])
   const [cart, setCart] = useState(cartLS);
   const [heart, setHeart] = useState(heartLS);
@@ -53,6 +55,10 @@ export function UserProvider({ children }) {
   useEffect(()=>{
     localStorage.setItem('heart',JSON.stringify(heart))
   },[heart])    
+
+  useEffect(()=>{
+    localStorage.setItem('UserAccount',JSON.stringify(UserAccount))
+  },[UserAccount]) 
   
   
   // ------------- FUNCIÓN RESTAR -1 PRODUCTO. REUTILIZABLE -------------------
@@ -97,7 +103,7 @@ export function UserProvider({ children }) {
 
 /////////      R E T U R N       /////////////
     return (
-      <getDron.Provider value={{ data, cart, setCart, cartQuantity, setCartQuantity, buyProducts, restProducts, deleteProduct, deleteHeart, setHeart, heart, setHeartQuantity, heartQuantity, AddFavorites, handleFavoriteClick, setIsHeartColored, cardStates, setCardStates}}>{children}</getDron.Provider> 
+      <getDron.Provider value={{ data, cart, setCart, cartQuantity, setCartQuantity, buyProducts, restProducts, deleteProduct, deleteHeart, setHeart, heart, setHeartQuantity, heartQuantity, AddFavorites, handleFavoriteClick, setIsHeartColored, cardStates, setCardStates, UserAccount, setUserAccount}}>{children}</getDron.Provider> 
   
   )
 }

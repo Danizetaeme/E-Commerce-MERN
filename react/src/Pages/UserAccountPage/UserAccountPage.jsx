@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Container, Typography, TextField, Button, Grid, Paper } from '@material-ui/core';
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
+import { getDron } from '../../Context/UserProvider';
+
 
 export const UserAccountPage = () => {
+  const {UserAccount} = useContext(getDron)
   const [user, setUser] = useState({
     name: '',
     email: '',
-    password: '',
+    password: '*********',
   });
 
   const [editing, setEditing] = useState(false);
@@ -47,13 +50,13 @@ export const UserAccountPage = () => {
       <Container maxWidth="md" style={{ marginTop: '2rem' }}>
         <Paper elevation={3} style={{ padding: '2rem' }}>
           <Typography variant="h4" gutterBottom>
-            Bienvenido a tu cuenta 
+            Bienvenido a tu cuenta, {UserAccount}
           </Typography>
 
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6}>
               <TextField
-                label="Nombre"
+                label={UserAccount}
                 name="name"
                 value={user.name}
                 onChange={handleChange}

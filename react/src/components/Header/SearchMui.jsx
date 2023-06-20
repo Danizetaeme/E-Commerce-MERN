@@ -19,6 +19,9 @@ import { FavoriteIconHeader } from './FavoritesIconHeader';
 import { getDron } from '../../Context/UserProvider';
 import { Badge } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
+import './Header.css'
+
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -42,6 +45,7 @@ export function SearchMui() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const { cartQuantity, heartQuantity } = useContext(getDron);
+  const {UserAccount} = useContext(getDron);
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -76,7 +80,7 @@ export function SearchMui() {
             sx={{ mr: 2 }}
             onClick={handleMenuOpen}
           >
-            <MenuIcon className="classestoolbar" />
+          <MenuIcon className="classestoolbar" />
           </IconButton>
           <Typography
             variant="h6"
@@ -92,9 +96,10 @@ export function SearchMui() {
             <Link to="/"><span className='nameApp' style={{ fontFamily: 'Roboto', fontSize: '24px', fontWeight: '200' }}>DroneTech</span></Link>
           </Typography>
 
+          <span classname="UserAccount">{UserAccount}</span>
           <Link to="/register">
-            <WhiteIconButton>
-              <PersonIcon />
+            <WhiteIconButton>     
+              <PersonIcon /> 
             </WhiteIconButton>
           </Link>
 

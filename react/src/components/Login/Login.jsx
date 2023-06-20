@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, TextField } from '@mui/material';
 import { toast, ToastContainer } from 'react-toastify';
@@ -7,11 +7,18 @@ import './Register.css';
 import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
 import { Link } from 'react-router-dom';
+import { getDron } from '../../Context/UserProvider';
+
+
+
+
 
 export function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const {setUserAccount} = useContext(getDron);
+
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -27,6 +34,7 @@ export function Login() {
 
     if (response.ok) {
       const { token } = await response.json();
+      setUserAccount(username)
       // Guardar el token en el almacenamiento local (localStorage) o en una cookie, según tus necesidades
       localStorage.setItem('token', token);
       // Mostrar mensaje de éxito y redireccionar a la página de inicio o a otra página protegida
