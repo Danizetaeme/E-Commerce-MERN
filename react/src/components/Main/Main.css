@@ -1,0 +1,273 @@
+
+
+/* FILTRO BOTONES */
+
+.filters {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.filters button {
+  font-family: 'Roboto';
+  background-color: #201e1f;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  width: 120px;
+  height: 40px;
+  font-weight: 200;
+  font-size: 14px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.filters button:hover {
+  background-color: #ff4000; /* Color de fondo del botón al pasar el cursor */
+  color: #f8f9fa;
+  transition: 0.5s ease-in-out;
+}
+
+.filters button.active {
+  background-color: #ff4000;
+}
+
+/* REJILLA PRODUCTOS */
+
+.cards-title-container {
+  font-weight: 300;
+  color: #201E1F;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  margin-top: 25px;
+  display: inline-block;
+ 
+}
+
+.favoritesicons{
+
+  margin-bottom: 25px;
+}
+
+.FavoriteIcon.clicked {
+  color: rgb(186, 182, 182);
+}
+.FavoriteIcon {
+  margin-bottom: 5px;
+  background-color:none;
+  color: #FF4000;
+}
+
+.FavoriteIcon:active {
+  background-color: none;
+  color: rgb(186, 182, 182);
+}
+
+.card-section{
+  font-size: 25px;
+  margin-left: 105px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+
+.card-item {
+  width: 100%;
+  max-width: 345px;
+  background-color: #f8f9fa;
+  transition: transform 0 }
+
+
+
+.cards{
+  margin-top: 50px;
+  align-items: center;
+  display: grid;
+  gap: 40px;
+  grid-template-columns:repeat(auto-fill,300px);
+  margin-left: 8em;
+  margin-bottom: 40px;
+  
+}
+
+/* BOTÓN COMPRAR */
+
+.buybutton{
+  border: none;
+  text-decoration: none;
+  outline: none;
+  background-color: #f8f9fa;
+}
+
+.buybutton:hover{
+  background-color: #f8f9fa;
+  border-radius: 20px;
+  color:#FF4000
+}
+.buton:hover{
+  color:#000000
+}
+
+.MuiButtonBase-root{
+  color:#000000
+}
+
+.css-et1ao3-MuiTypography-root {
+  margin: 0;
+  font-family: "Roboto","Helvetica","Arial",sans-serif;
+  font-weight: 800;
+  font-size: 1.875rem;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+  display: block;
+}
+
+
+/* BANNER */
+
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 50vh;
+  background-color: #f8f9fa; /*Color de fondo del banner */
+ 
+}
+
+.image-wrapper {
+  width: 350px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.rounded-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.text-wrapper {
+  text-align: center;
+}
+
+.text-wrapper h1 {
+  font-size: 80px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #201E1F;
+}
+
+.text-wrapper p {
+  font-size: 25px;
+  color: #888888;
+}
+
+.contact-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #FF4000; /* Color de fondo del botón */
+  color: #ffffff; /* Color del texto del botón */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.contact-button:hover {
+  background-color:#201E1F; /* Color de fondo del botón al pasar el cursor */
+  color: #f8f9fa;
+  transition: 0.5s ease-in-out;
+
+}
+.favorite {
+  color: #FF4000;
+}
+
+.favorite-drone {
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+.image-favorites{
+  height: 200px;
+  width: 200px;
+  
+}
+
+.drone-details {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+
+.favoritecontainer {
+  margin: auto;
+  align-items: center;
+  padding: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+ul {
+  flex-grow: 1;
+  margin-bottom: 0; /* Evita que el margen inferior del ul empuje al footer */
+}
+
+.footer {
+  text-align: center;
+
+}
+
+.centered-heading {
+  text-align: center; /* Centrar texto horizontalmente */
+}
+.emptyfavorites {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30vh; /* Ajusta este valor según tu preferencia */
+}
+
+.emptyfavorites h2 {
+  font-size: 24px; /* Ajusta este valor según tu preferencia */
+  color: #201E1F;
+  font-weight: 300;
+
+}
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.link-style {
+  color: inherit;
+  text-decoration: none;
+}
+
+.heart.active {
+  color: #FF4000;
+}
+
+.heart{
+  border: none;
+  outline: none;
+  background:transparent;
+  color: rgba(180, 175, 175, 0.806);
+  outline: none;
+}

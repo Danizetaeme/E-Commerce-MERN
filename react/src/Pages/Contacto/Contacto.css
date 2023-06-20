@@ -1,0 +1,104 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 100px;  
+  }
+  
+  .infoSection {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    font-family: "Roboto";
+    color: #201E1F;  
+  }
+
+  .infoSection h2{
+    font-weight: 100;
+    align-items: center;
+    text-align: center;
+    margin-left: 25px;
+  }
+  
+  .formSection {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 300px;
+    font-family: "Roboto";
+    
+  }
+  
+  .formGroup {
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight:300;
+    font-family: "Roboto";
+    color: #201E1F;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 5px;
+  }
+/* 
+  .address{
+    padding: 20px;
+    background-color: #ff4000;
+    border-radius: 50%;
+  } */
+
+  .contact-image{
+    align-items: center;
+    width: 400px;
+    height: 400px;
+  }
+
+  .infoAddress{
+    font-family: "Roboto";
+    font-size: 20px;
+    font-weight: 300;
+    color: aliceblue;
+  }
+
+  
+  .formGroup input,
+  .formGroup textarea {
+    width: 500px;
+    padding: 20px;
+    font-size: 16px;
+  }
+  
+  .btnSubmit {
+    background-color: #FF4000;
+    color: white;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  .btnSubmit {
+    width: 500px;
+    font-size: 20px;
+    font-weight:600;
+    font-family: "Roboto";
+    color: white;
+    padding: 20px;
+    border: none;
+  }
+
+  .btnSubmit:hover{
+    background-color: #201E1F;
+    transition: ease-in-out 0.5s;
+    cursor: pointer;
+  }
+
+  .inputText {
+    color: #818181;
+  }
+  
+  .socialMedia{
+    color: white;
+
+  }
+  

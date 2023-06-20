@@ -1,0 +1,24 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 300px;  
+  }
+
+.registrate{
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    text-align: center;
+    display: inline-block;
+    white-space: nowrap;
+}
+

@@ -1,0 +1,24 @@
+
+  .social-icon {
+    margin-right: 10px;
+    font-size: 24px;
+    color: #201E1F;
+  }
+
+  .social-icon:hover{
+    color: #ffffff;
+    transition: ease-in-out 0.5s;
+    cursor: pointer;
+  }
+
+  .footer-container{
+    justify-content: space-between;
+  
+  }
+
+  .main-footer{
+    bottom: 0;
+    width: 100%;
+  }
+
+  
