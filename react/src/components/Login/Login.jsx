@@ -8,9 +8,7 @@ import { Header } from '../Header/Header';
 import { Footer } from '../Footer/Footer';
 import { Link } from 'react-router-dom';
 import { getDron } from '../../Context/UserProvider';
-
-
-
+import { AuthContext } from '../../AuthContext/AuthContext';
 
 
 export function Login() {
@@ -18,7 +16,7 @@ export function Login() {
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const {setUserAccount} = useContext(getDron);
-
+  const {login} = useContext(AuthContext);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -34,7 +32,8 @@ export function Login() {
 
     if (response.ok) {
       const { token } = await response.json();
-      setUserAccount(username)
+      setUserAccount(username);
+      login();
       // Guardar el token en el almacenamiento local (localStorage) o en una cookie, según tus necesidades
       localStorage.setItem('token', token);
       // Mostrar mensaje de éxito y redireccionar a la página de inicio o a otra página protegida

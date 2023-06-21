@@ -19,6 +19,7 @@ export function UserProvider({ children }) {
   const [heart, setHeart] = useState(heartLS);
   const [cardStates, setCardStates] = useState();
 
+
   useEffect(() => {
     axios.get("http://localhost:8000/drons").then((res)=>setData(res.data))
   }, [])
@@ -99,6 +100,15 @@ export function UserProvider({ children }) {
       });
       setIsHeartColored(!cardStates[id]?.isFavorite);
     };
+
+// CERRAR SESIÓN 
+
+    // const handleLogout = () => {
+    //   setUserAccount('');
+    //   localStorage.removeItem('UserAccount');
+    //   navigate('/') // Elimina el valor de UserAccount en el almacenamiento local
+    // };
+
 
 
 /////////      R E T U R N       /////////////

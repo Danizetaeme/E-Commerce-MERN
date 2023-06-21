@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
@@ -20,7 +20,7 @@ import { getDron } from '../../Context/UserProvider';
 import { Badge } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 import './Header.css'
-
+import { AuthContext } from '../../AuthContext/AuthContext';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -46,6 +46,9 @@ export function SearchMui() {
   const [isModalOpen, setIsModalOpen] = React.useState(false);
   const { cartQuantity, heartQuantity } = useContext(getDron);
   const {UserAccount} = useContext(getDron);
+  const {isLoggedIn} = useContext(AuthContext);
+  const navigate = useNavigate();
+
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -55,8 +58,6 @@ export function SearchMui() {
     setAnchorEl(null);
   };
 
-
-
   const handleModalClose = () => {
     setIsModalOpen(false);
   };
@@ -64,6 +65,21 @@ export function SearchMui() {
   const WhiteIconButton = styled(IconButton)({
     color: '#FFFFFF',
   });
+
+  
+  const handleIconClick = () => {
+    if (!isLoggedIn) {
+      // Mostrar ventana emergente o redirigir a la página de inicio de sesión
+      alert('Debes iniciar sesión');
+      navigate('/register');
+    } else {
+      // Realizar la acción deseada para mostrar la página de detalles del usuario
+      navigate('/UserAccount');
+    }
+  };
+
+
+
 
   return (
 
@@ -97,11 +113,10 @@ export function SearchMui() {
           </Typography>
 
           <span classname="UserAccount">{UserAccount}</span>
-          <Link to="/register">
-            <WhiteIconButton>     
+            <WhiteIconButton onClick={handleIconClick}>     
               <PersonIcon /> 
             </WhiteIconButton>
-          </Link>
+        
 
           <IconButton>
             <Badge badgeContent={heartQuantity} color="primary">

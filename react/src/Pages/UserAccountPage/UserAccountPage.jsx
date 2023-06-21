@@ -3,19 +3,24 @@ import { Container, Typography, TextField, Button, Grid, Paper } from '@material
 import { Header } from '../../components/Header/Header';
 import { Footer } from '../../components/Footer/Footer';
 import { getDron } from '../../Context/UserProvider';
+import './UserAccount.css'
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../AuthContext/AuthContext';
+
 
 
 export const UserAccountPage = () => {
-  const {UserAccount} = useContext(getDron)
+  const {UserAccount, setUserAccount} = useContext(getDron)
   const [user, setUser] = useState({
     name: '',
     email: '',
     password: '*********',
   });
-
+  
+  const {logout} = useContext(AuthContext)
   const [editing, setEditing] = useState(false);
   const [newPassword, setNewPassword] = useState('');
-
+  const navigate = useNavigate();
   const handleEdit = () => {
     setEditing(true);
   };
@@ -43,16 +48,30 @@ export const UserAccountPage = () => {
     console.log('Account deleted');
   };
 
+
+  const handleLogout = () => {
+    setUserAccount('');
+    localStorage.removeItem('UserAccount');
+    navigate('/') // Elimina el valor de UserAccount en el almacenamiento local
+    logout()
+  };
+
+
+  // const handleLogout = () => {
+  //   setUserAccount(''); // Elimina el valor de UserAccount para cerrar sesión
+  //   navigate('/')
+  // };
+
+
   return (
     <div>
       <Header />
 
       <Container maxWidth="md" style={{ marginTop: '2rem' }}>
-        <Paper elevation={3} style={{ padding: '2rem' }}>
+        <Paper elevation={3} style={{ padding: '2rem' }}>     
           <Typography variant="h4" gutterBottom>
             Bienvenido a tu cuenta, {UserAccount}
-          </Typography>
-
+          </Typography>          
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -137,6 +156,15 @@ export const UserAccountPage = () => {
                 <Button variant="contained" color="primary" onClick={handleChangePassword}>
                   Cambiar contraseña
                 </Button>
+
+                <Button 
+                variant="contained"
+                color="secondary"
+                style={{ marginLeft: '1rem' }}
+                onClick= {handleLogout}
+              >Cerrar sesión
+              </Button>
+
               </div>
             </div>
           )}
@@ -147,10 +175,6 @@ export const UserAccountPage = () => {
     </div>
   );
 };
-
-
-
-
 
 
 
